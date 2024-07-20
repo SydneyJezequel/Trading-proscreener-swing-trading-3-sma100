@@ -13,19 +13,19 @@ authorizedDistance = 0.03
 
 // ***************** Conditions - Point d’entré ***************** //
 
-// Bougie > sma100 :
+// Clôture de la dernière bougie croise à la hausse sma100 :
 C1 = Close CROSSES OVER SMA100
 
 
-// Cloture de la bougie :
+// Clôture de la bougie :
 C2 = Close = SMA100
 
 
-// Bas de la bougie :
-C3 = Low[0] = SMA100
+// Bas de la dernière bougie égal ou croise sma100 :
+C3 = Low[0] = SMA100 or Low[0] CROSSES OVER SMA100
 
 
-// Prix proche et supérieur à SMA100 (3% ou moins) :
+// Prix proche (3% ou moins) et supérieur à SMA100 :
 C4 = 0
 FOR i = 0 TO 1 DO
 smaCloseDistance = abs((Close[i] - SMA100) / SMA100)
@@ -55,11 +55,11 @@ C6 = SMA100 > SMA200
 C7 = SMA100[0] >= SMA100[1] and SMA100[1] >= SMA100[2] and SMA100[2] >= SMA100[3] and SMA100[3] >= SMA100[4] and SMA100[4] >= SMA100[5]
 
 
-// Volume minimum :
+// Volume de transaction minimum :
 C8 = VOLUME >= VolMini
 
 
-// Alignement haussier des SMA :
+// Alignement haussier des sma100 et sma200 :
 C9 = 1
 FOR i = 0 TO alignedPeriod DO
 IF NOT (SMA100[i] > SMA200[i]) THEN
@@ -80,3 +80,5 @@ C10 = C6 and C7 and C8 and C9
 
 // ************************** Conditions du Screener ************************** //
 SCREENER [C5 and C10]
+
+
