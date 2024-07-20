@@ -4,7 +4,7 @@ SMA100 = Average[100](close)
 SMA200 = Average[200](close)
 alignedPeriod = 10
 VolMini = 10000
-authorizedDistance = 0.03
+authorizedDistance = 0.02
 
 
 
@@ -37,8 +37,12 @@ ENDIF
 NEXT
 
 
+// Dernière bougie haussière :
+C5 = Close > Open
+
+
 // Condition qui regroupe les conditions des points d'entrés :
-C5 = C1 or C2 or C3 or C4
+C6 = (C1 or C2 or C3 or C4) and C5
 
 
 
@@ -48,19 +52,19 @@ C5 = C1 or C2 or C3 or C4
 // ************************** Conditions - Tendance de fond ************************** //
 
 // sma100 > sma200 :
-C6 = SMA100 > SMA200
+C7 = SMA100 > SMA200
 
 
 // sma100 haussière :
-C7 = SMA100[0] >= SMA100[1] and SMA100[1] >= SMA100[2] and SMA100[2] >= SMA100[3] and SMA100[3] >= SMA100[4] and SMA100[4] >= SMA100[5]
+C8 = SMA100[0] >= SMA100[1] and SMA100[1] >= SMA100[2] and SMA100[2] >= SMA100[3] and SMA100[3] >= SMA100[4] and SMA100[4] >= SMA100[5]
 
 
 // Volume de transaction minimum :
-C8 = VOLUME >= VolMini
+C9 = VOLUME >= VolMini
 
 
 // Alignement haussier des sma100 et sma200 :
-C9 = 1
+C10 = 1
 FOR i = 0 TO alignedPeriod DO
 IF NOT (SMA100[i] > SMA200[i]) THEN
 C9 = 0
@@ -71,7 +75,7 @@ NEXT
 
 
 // Condition qui regroupe les conditions de la tendance de fond :
-C10 = C6 and C7 and C8 and C9
+C11 = C7 and C8 and C9 and C10
 
 
 
@@ -79,6 +83,4 @@ C10 = C6 and C7 and C8 and C9
 
 
 // ************************** Conditions du Screener ************************** //
-SCREENER [C5 and C10]
-
-
+SCREENER [C6 and C11]
