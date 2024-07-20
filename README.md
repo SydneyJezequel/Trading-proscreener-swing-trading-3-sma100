@@ -14,3 +14,4 @@ Il détecte les actifs qui répondent :
 * Le volume minimum est de 10 000.
 * Les moyennes mobiles 100 et 200 sont alignées à la hausse. 
 
+Le langage utilisé est ProRealcode, un langage propre à la plateforme de Trading Prorealtime.
