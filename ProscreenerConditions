@@ -67,7 +67,7 @@ C9 = VOLUME >= VolMini
 C10 = 1
 FOR i = 0 TO alignedPeriod DO
 IF NOT (SMA100[i] > SMA200[i]) THEN
-C9 = 0
+C10 = 0
 BREAK
 ENDIF
 i = i+1
