@@ -3,8 +3,8 @@
 SMA100 = Average[100](close)
 SMA200 = Average[200](close)
 alignedPeriod = 10
-VolMini = 10000
-authorizedDistance = 0.02
+VolMini = 30000
+authorizedDistance = 0.03
 
 
 
@@ -13,8 +13,9 @@ authorizedDistance = 0.02
 
 // ***************** Conditions - Point d’entré ***************** //
 
+
 // Clôture de la dernière bougie croise à la hausse sma100 :
-C1 = Close CROSSES OVER SMA100
+C1 = Close CROSSES OVER SMA100 or (Close > SMA100 and Open<SMA100)
 
 
 // Clôture de la bougie :
@@ -37,8 +38,8 @@ ENDIF
 NEXT
 
 
-// Dernière bougie haussière :
-C5 = Close > Open
+// Rebond :
+C5 = close[0] > close[1] and close[1] < close[2]
 
 
 // Condition qui regroupe les conditions des points d'entrés :
