@@ -7,6 +7,7 @@ Il détecte les actifs qui répondent aux actifs :
 * Le cours de clôture clôture de la dernière bougie est égal à la moyenne mobile 100.
 * Le plus bas de la dernière bougie est égal ou croise la moyenne mobile 100.
 * Le cours de clôture de la dernière bougie est proche (3% ou moins)et supérieur à SMA100.
+
 Et on a une reprise potentielle de la tendance (dernière bougie haussière suite à une baisse).
 
 2- Dont la tendance de fond répond aux conditions suivantes :
