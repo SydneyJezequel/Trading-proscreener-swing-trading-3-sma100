@@ -19,3 +19,18 @@ Et on a une reprise potentielle de la tendance (dernière bougie haussière suit
 * Les moyennes mobiles 100 et 200 sont alignées à la hausse. 
 
 Le langage utilisé est ProRealcode, un langage propre à la plateforme de Trading Prorealtime.
+Ci-dessous des exemples d'actions détectées par le screener.
+
+Exemple sur l’action Michelin au 30/07/2024 :
+
+![Capture d’écran 2024-07-30 à 20 44 23](https://github.com/user-attachments/assets/39e84acc-4ead-48a7-a9c7-c7a43ef3f9ab)
+
+
+Exemple sur l’action BAM GROEP KON au 30/07/2024 :
+
+![Capture d’écran 2024-07-30 à 20 44 36](https://github.com/user-attachments/assets/d9ad1567-9cad-45f4-97d3-f67dd2f87918)
+
+
+Exemple sur l’action Google au 30/07/2024 :
+
+![Capture d’écran 2024-07-30 à 20 45 08](https://github.com/user-attachments/assets/ba45d3b5-0536-42bb-af1c-1effcbdb324b)
